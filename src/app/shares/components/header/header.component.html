@@ -1,0 +1,22 @@
+<div class="hidden md:flex pt-2.5 px-5 justify-between" [ngClass]="headerChange ? 'border-b-2':''">
+    <div class="cursor-pointer" routerLink="/acceuil"><img src="assets/logo.svg" alt="" class=""></div>
+    <div class="flex space-x-10 pr-10 -mb-px" [ngClass]="homeActive || salonActive ? 'mb-0':''">
+        <div class="cursor-pointer pb-1 hover:border-b-2 hover:border-black hover:font-medium" [ngClass]="homeActive ? 'border-black font-medium border-b-2':''" routerLink="/acceuil">Accueil</div>
+        <div class="cursor-pointer pb-1 hover:border-b-2 hover:border-black hover:font-medium" [ngClass]="salonActive ? 'border-black font-medium border-b-2':''" routerLink="/salon">Salon</div>
+        <div class="cursor-pointer pb-1 hover:border-b-2 hover:border-black hover:font-medium" [ngClass]="contactActive ? 'border-black font-medium border-b-2':''" routerLink="/contact">Contact</div>
+    </div>
+</div>
+
+<!-- responsive -->
+<div class="relative md:hidden">
+    <div class="flex flex-row justify-between items-center py-2 px-3">
+        <div class="cursor-pointer" routerLink="/acceuil"><img src="assets/logo.svg" alt="" class=""></div>
+        <div class="cursor-pointer"(click)="showMenu = !showMenu; close($event)"><img [src]="showMenu ? 'assets/menuClose.svg':'assets/menu.svg'" alt="" class=""></div>
+    </div>
+    <div class="bg-white absolute right-0 top-12 rounded-lg h-32 w-3/5 z-10 " *ngIf="showMenu">
+        <div [routerLink]="item.link" class="flex justify-between px-3 py-1 cursor-pointer items-center space-y-1 border-b-2 last:border-0" style="border-color: #8C8C8C;" *ngFor="let item of items">
+            <div class="first-letter:capitalize text-black font-semibold">{{item.name}}</div>
+            <div class=""><img [src]="item.icon" alt="" class=""></div>
+        </div>
+    </div>
+</div>

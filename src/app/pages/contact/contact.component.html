@@ -1,0 +1,33 @@
+<app-header [headerChange]="true" [contactActive]="true"></app-header>
+<div class="flex justify-center px-3 text-gray-600">
+    <div class="flex flex-col shadow-2xl my-10 px-2 py-5 space-y-10" style="min-width: 300px;">
+        <div class="text-2xl font-semibold text-center text-black">Nous contacter</div>
+        <div class="">
+            <form action="">
+                <div class="space-y-5 w-full">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="flex flex-col items-start">
+                            <label for="">Nom</label>
+                            <input type="text" name="" id="" class="border-b-2 w-36 sm:w-full md:w-full">
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <label for="">Email</label>
+                            <input type="email" name="" id="" class="border-b-2 w-36 sm:w-full md:w-full">
+                        </div>
+                        <div class="col-span-2 flex flex-col items-start space-y-">
+                            <label for="">Message</label>
+                            <textarea name="" id="" cols="30" rows="1" class="border-b-2 w-full"></textarea>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button type="submit" class="text-white flex items-center justify-center space-x-5 w-36 h-12 p-2" style="background-color: #1D1D1B;">
+                            <p class="text-xl">Envoyer</p>
+                            <img src="assets/send.svg" alt="" width="30" class="pt-1">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer [footerChange]="false"></app-footer>

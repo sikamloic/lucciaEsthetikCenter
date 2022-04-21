@@ -1,0 +1,63 @@
+<app-header [headerChange]="true"></app-header>
+<div class="text-gray-600 space-y-10 mb-5 px-5">
+    <div class="flex flex-col items-center px-5 space-y-5 md:items-start">
+        <div class="font-semibold text-2xl text-black">Nos meilleurs soins</div>
+        <div class="">
+            <div class="flex flex-col-reverse md:flex-row md:space-x-10">
+                <div class="md:w-2/3">
+                    <div class="">Bien qu'il y ait de nombreuses preuves indiquant que les peaux noires et métissées vieillissent incroyablement bien et que la mélanine protège du photo-vieillissement, elles perdent aussi progressivement leur élasticité, développent des rides et se ternissent avec le temps ou le manque d'entretien comme toutes les autres peaux de types différents. </div>
+                    <div class="hidden md:block">Il est donc important de suivre une routine de soin qui inclut la protection solaire, le rétinol, un antioxydant et un hydratant de qualité pour conserver un teint de peau lumineux et jeune. Il est préférable d'adopter tôt cette routine pour voir son efficacité s'accroître au fil du temps. Luccia esthétik center vous propose une large gamme de soins esthétiques pour vous permettre de suivre une routine de soins régulier. Nous aurons le plaisir de vous accueillir au sein de notre institut dans une ambiance détendue et dépourvue de tout stress. Vous aurez l’occasion de prendre une parenthèse de détente dans un décor épuré et accueillant.</div>
+                </div>
+                <div class="flex justify-center"><img src="assets/image1.svg" alt="" class=""></div>
+            </div>
+            <div class="md:hidden">Il est donc important de suivre une routine de soin qui inclut la protection solaire, le rétinol, un antioxydant et un hydratant de qualité pour conserver un teint de peau lumineux et jeune. Il est préférable d'adopter tôt cette routine pour voir son efficacité s'accroître au fil du temps. Luccia esthétik center vous propose une large gamme de soins esthétiques pour vous permettre de suivre une routine de soins régulier. Nous aurons le plaisir de vous accueillir au sein de notre institut dans une ambiance détendue et dépourvue de tout stress. Vous aurez l’occasion de prendre une parenthèse de détente dans un décor épuré et accueillant.</div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center px-5 space-y-10">
+        <div class="font-medium text-lg text-black">soins esthetiques</div>
+        <div class="w-full space-y-3 md:px-20">
+            <div class="border-b-2 pb-3" *ngFor="let item of soins">
+                <div class="flex justify-between items-center">
+                    <div class="first-letter:capitalize">{{item.name}}</div>
+                    <div class="cursor-pointer" (click)="item.select = !item.select"><img [src]="item.select ? 'assets/arrow-up.svg':'assets/plus.svg'" alt="" class="" [ngClass]="item.select ? 'w-5':'w-5'"></div>
+                </div>
+                <div class="pl-5 md:pl-10 md:w-full space-y-7 md:space-y-3" *ngIf="item.select">
+                    <div class="flex flex-row justify-between items-baseline md:items-center border-b-2 border-black border-dashed" style="color: #E8426A;" *ngFor="let sub of item.sub">
+                        <div class="text md:-mb-2.5 bg-white">{{sub.name}}</div>
+                        <div class="md:-mb-4 bg-white">{{sub.prix}} Fcfa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center px-5 space-y-5 md:items-start">
+        <div class="text-center font-semibold text-2xl text-black">Beauté</div>
+        <div class="">
+            <div class="flex flex-col-reverse md:flex-row md:space-x-10">
+                <div class="md:w-2/3">
+                    <div class="">La peau noire est unique, elle mérite les meilleurs soins. L’expérience Luccia esthétik center, c’est s’abandonner aux mains expertes de nos spécialistes, le temps d’un soin. Trouvez la routine adaptée à votre type de peau et offrez-vous un moment de détente dans un environnement convivial et apaisant. Notre spécialistes connaissent tous les secret de la peau noire et métissée. Luccia esthétik center vous propose ses soins experts et ses conseils</div>
+                    <div class="hidden md:block">personnalisés pour que vous soyez toujours au top de votre beauté.</div>
+                </div>
+                <div class=""><img src="assets/image3.svg" alt="" class="md:w-64"></div>
+            </div>
+            <div class="md:hidden">personnalisés pour que vous soyez toujours au top de votre beauté.</div>
+        </div>
+    </div>
+    <div class="flex flex-col items-center px-5 space-y-10">
+        <div class="w-full space-y-3 md:px-20">
+            <div class="border-b-2 pb-3" *ngFor="let item of beautes">
+                <div class="flex justify-between items-center">
+                    <div class="first-letter:capitalize">{{item.name}}</div>
+                    <div class="cursor-pointer" (click)="item.select = !item.select"><img [src]="item.select ? 'assets/arrow-up.svg':'assets/plus.svg'" alt="" class="" [ngClass]="item.select ? 'w-5':'w-5'"></div>
+                </div>
+                <div class="pl-5 md:pl-10 md:w-full space-y-3" *ngIf="item.select">
+                    <div class="flex flex-row justify-between items-center border-b-2 border-black border-dashed" style="color: #E8426A;" *ngFor="let sub of item.sub">
+                        <div class="text md:-mb-2.5 bg-white">{{sub.name}}</div>
+                        <div class="md:-mb-4 bg-white">{{sub.prix}} Fcfa</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
